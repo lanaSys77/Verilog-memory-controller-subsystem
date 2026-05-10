@@ -1,181 +1,115 @@
-# Verilog-Based Memory Controller Subsystem
+\documentclass[11pt]{article}
 
-## RTL Design & Verification Project
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{lmodern}
 
-A complete RTL hardware design and verification project implementing a simplified memory controller subsystem using Verilog HDL.
+\setlist[itemize]{leftmargin=*, noitemsep, topsep=2pt}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
 
-The system connects a CPU model with a synchronous 1K×16 memory through an FSM-based memory controller supporting:
-- Read/Write transactions
-- Simultaneous read/write arbitration
-- Fixed-latency operations
-- Verification testbenches
-- Full system integration
+\titleformat{\section}
+{\large\bfseries}
+{}{0em}{}[\titlerule]
 
----
+\begin{document}
 
-# System Architecture
+%==================== HEADER ====================%
 
-The following diagram illustrates the communication between the CPU, Memory Controller, and Memory subsystem.
+\begin{center}
+{\Huge \textbf{Lana Ayed Al-Sayes}}[6pt]
 
-<p align="center">
-  <img src="Images/Block%20diagram%20of%20the%20system.png" width="850"/>
-</p>
+```
+Computer Engineering Student \\
+Ramallah, Palestine \\[4pt]
 
-The controller handles:
-- Request scheduling
-- Read/Write arbitration
-- Fixed service latency
-- CPU-memory synchronization
-- Pending read handling
-
----
-
-# Core Design Features
-
-## RTL Design
-- FSM-based architecture
-- Synchronous memory interface
-- Ready/Valid handshake protocol
-- One-cycle memory strobes
-- Two-cycle service latency
-
-## Verification
-- Self-checking testbenches
-- Timing verification
-- Pulse-width validation
-- Concurrent read/write testing
-- Data correctness validation
-
-## Arbitration Logic
-If READ and WRITE requests arrive simultaneously:
-- WRITE operation executes first
-- READ request is stored temporarily
-- READ executes immediately after WRITE completion
-
----
-
-# FSM States
-
-| State | Function |
-|---|---|
-| IDLE | Waiting for incoming requests |
-| WRITE | Executing memory write transaction |
-| READ | Executing memory read transaction |
-
----
-
-# Project Structure
-
-```bash
-Verilog-memory-controller-subsystem/
-│
-├── Images/
-│   ├── Block diagram of the system.png
-│   ├── Memory controller simulation.png
-│   └── Complete system simulation.png
-│
-├── AdvDiditProject1220785.pdf
-├── Advancedc.txt
-└── README.md
+\href{mailto:lanasayes84@gmail.com}{lanasayes84@gmail.com}
+\quad | \quad
+\href{https://github.com/lanaSys77}{GitHub}
+\quad | \quad
+\href{https://www.linkedin.com/in/lana-sayes-76245a297}{LinkedIn}
 ```
 
----
+\end{center}
 
-# Memory Controller Simulation
+\vspace{0.15cm}
 
-The waveform below demonstrates:
-- FSM transitions
-- Memory write operations
-- Read requests
-- Ready/Valid signaling
-- Write completion pulse behavior
+%==================== SUMMARY ====================%
 
-<p align="center">
-  <img src="Images/Memory%20controller%20simulation.png" width="1000"/>
-</p>
+\section*{Professional Summary}
 
----
+Computer Engineering student interested in \textbf{RTL design, digital systems, and computer architecture}, with hands-on experience in Verilog-based hardware development and verification.
 
-# Full System Simulation
+Familiar with RTL workflows, FSM implementation, timing-aware logic, waveform debugging, and hardware verification methodologies.
 
-The integrated system simulation verifies:
-- CPU-controller interaction
-- Memory transactions
-- Read-after-write correctness
-- Simultaneous read/write handling
-- Transaction ordering
+Seeking an internship in \textbf{RTL, digital design, verification, or physical design} to further develop ASIC/FPGA design skills.
 
-<p align="center">
-  <img src="Images/Complete%20system%20simulation.png" width="1000"/>
-</p>
+%==================== PROJECTS ====================%
 
----
+\section*{Projects}
 
-# Verification Scenarios
+\textbf{32-bit Multicycle RISC Processor (Verilog RTL)} \hfill
+\href{https://github.com/lanaSys77/32-bit_Multicycle_RISC_Processor_Verilog}{GitHub}
 
-The verification environment checks:
+\begin{itemize}
+\item Designed and implemented a 32-bit multicycle RISC processor using modular Verilog RTL architecture.
+\item Developed ALU, register file, control unit, and memory interface modules.
+\item Implemented FSM-controlled instruction execution and verified functionality using simulation and testbenches.
+\end{itemize}
 
-- Correct write operations
-- Correct read operations
-- Read-after-write functionality
-- Simultaneous RW arbitration
-- Fixed transaction latency
-- One-cycle pulse widths
-- Proper FSM sequencing
+\vspace{0.08cm}
 
----
+\textbf{Verilog-Based Memory Controller Subsystem} \hfill
+\href{https://github.com/lanaSys77/verilog-memory-controller-subsystem}{GitHub}
 
-# Example Transactions
+\begin{itemize}
+\item Designed and verified an FSM-based memory controller supporting CPU-memory interfacing and read/write arbitration.
+\item Developed self-checking testbenches for timing validation, pulse-width verification, and simultaneous read/write handling.
+\item Implemented synchronous memory communication and ready/valid handshaking using RTL methodologies.
+\end{itemize}
 
-| Operation | Address | Data |
-|---|---|---|
-| WRITE | 0x0010 | 0xBEEF |
-| READ | 0x0010 | 0xBEEF |
-| SIMULTANEOUS RW | 0x0020 | 0x1234 |
+\vspace{0.08cm}
 
----
+\textbf{Custom 32-bit CPU Datapath (Logisim)} \hfill
+\href{https://github.com/lanaSys77/32bit-CPU-Design-Logisim}{GitHub}
 
-# Technologies Used
+\begin{itemize}
+\item Designed a complete processor datapath including ALU, control logic, register file, and branching mechanisms.
+\item Applied computer architecture concepts including multiplexing, decoding, and instruction flow control.
+\end{itemize}
 
-| Category | Technology |
-|---|---|
-| HDL | Verilog |
-| Design Methodology | RTL Design |
-| Architecture | FSM |
-| Verification | Self-Checking Testbench |
-| Domain | Digital Systems Design |
+%==================== ACTIVITIES ====================%
 
----
+\section*{Leadership & Activities}
 
-# Key Concepts
+\textbf{Google Developer Groups (GDG) -- Marketing Team Lead} \hfill 2024--2025
 
-- RTL Hardware Design
-- FSM Design
-- CPU-Memory Interface
-- Memory Arbitration
-- Timing Verification
-- Digital System Integration
-- Hardware Verification
-- Verilog HDL
+\begin{itemize}
+\item Led planning and execution of technical events, workshops, and hackathons.
+\end{itemize}
 
----
+\vspace{0.03cm}
 
-# Learning Outcomes
+\textbf{Google Developer Student Club (GDSC) -- Member} \hfill 2023--2024
 
-Through this project, I gained hands-on experience in:
-- RTL development
-- FSM implementation
-- Hardware verification
-- Timing analysis
-- System-level integration
-- CPU-memory communication
-- Digital architecture design
+\begin{itemize}
+\item Contributed to organizing technical sessions and collaborative student activities.
+\end{itemize}
 
----
+%==================== SKILLS ====================%
 
-# Author
+\section*{Technical Skills}
 
-## Lana Ayed Sayes
+\textbf{Programming:} C, C++, Python, Java, SQL, Bash, Verilog [2pt]
 
-Computer Engineering Student  
-Birzeit University
+\textbf{Hardware & Systems:} RTL Design, FSM Design, Digital Logic, Computer Architecture, Datapath Design, Hardware Verification [2pt]
+
+\textbf{Tools:} Logisim, Git, Linux, Flask, MySQL, SQLite [2pt]
+
+\textbf{Languages:} Arabic (Native), English (Professional), Turkish (Intermediate)
+
+\end{document}
